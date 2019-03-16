@@ -276,7 +276,30 @@ dear even rhyme, me, from your eyes' fever
 
 \section{Visualization and Interpretation}
 \medskip
-
+We first used text_to_wordcloud to see a general representation of Shakespeare's sonnet. Below is the wordcloud. 
+\begin{center}
+	\includegraphics[width=8cm]{Picture/All}
+\end{center}
+We can see that the top 3 words are thy, love, and thee. \\
+Next, we used visualize_sparsities to visualize the sparsities of the A and O matrices. 
+\begin{center}
+	\includegraphics[width=8cm]{Picture/A}
+	\includegraphics[width=8cm]{Picture/O}
+\end{center}
+We can see that our A and O matrix and both pretty sparse, our observation matrix in particular is very sparse. This means that observation from a state or to a state is very unlikely. \\
+Next, we use states_to_wordclouds to represent each state. We see that for 5 states, the top 10 words in each state are: \\
+\begin{verbatim}
+State 1: love, thy, ill, see, know, doth, upon, hold, thing, hath
+State 2: thou, make, thy, yet, still, every, time, tell, thee, see
+State 3: will, hath, doth, now, dost, may, even, whilst, though, never
+State 4: thy, thee, thine, mine, one, love, art, wilt, dost, others
+State 5: love, eye, self, beauty, thou, sweet, time, heart, day, will
+\end{verbatim}
+We can see that thy, thee, and love are very common among all 5 states. State 1 seem more general. State 2 seems to contain adverbs. State 3 seems to contain action. State 4 seems to contain pronouns. State 5 seems to contain adjective related to love. \\
+Lastly, we used animate_emissions to see how the model transitions between states. In our case, we have 5 states and string of 10 words. We can see that the arrows show the transitions between states. We also see the likelihood of transitions. Arrows with darker colors are more likely while the fainter ones are less likely. 
+\begin{center}
+	\includegraphics[width=14cm]{Picture/Vis}
+\end{center}
 % Explain your interpretation of how a Hidden Markov Model learns patterns in Shakespeare's texts. You should briefly elaborate on the methods you used to analyze the model. In addition, for at least 5 hidden states give a list of the top 10 words that associate with this hidden state and state any common features among these groups. Furthermore, try to interpret and visualize the learned transitions between states. A possible suggestion is to draw a transition diagram of your Markov model and give descriptive names to the states. Feel free to be creative with your visualizations, but remember that accurately representing data is still your primary objective. Your figures, tables, and diagrams should contribute to a discussion about your model.
 
 \end{document}
